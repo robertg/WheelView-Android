@@ -225,16 +225,6 @@ public class WheelView extends View implements GestureDetector.OnGestureListener
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 
-		mCenterIndicatorPath.reset();
-		float sizeDiv2 = mCursorSize / 2f;
-		float sizeDiv3 = mCursorSize / 3f;
-		mCenterIndicatorPath.moveTo(mMaxOverScrollDistance - sizeDiv2 + getScrollX(), 0);
-		mCenterIndicatorPath.rLineTo(0, sizeDiv3);
-		mCenterIndicatorPath.rLineTo(sizeDiv2, sizeDiv2);
-		mCenterIndicatorPath.rLineTo(sizeDiv2, -sizeDiv2);
-		mCenterIndicatorPath.rLineTo(0, -sizeDiv3);
-		mCenterIndicatorPath.close();
-
 		mMarkPaint.setColor(mHighlightColor);
 		canvas.drawPath(mCenterIndicatorPath, mMarkPaint);
 
